@@ -9,5 +9,13 @@ const productSchema = new Schema({
     categories: [String],
     price: Schema.Types.Decimal128
 });
-
+productSchema.set('toJSON', {
+    getters: true,
+    transform: (doc, ret) => {
+        ret.price = +ret.price.toString();
+        // delete ret.id;
+        delete ret.__v;
+        return ret;
+    },
+});
 module.exports = mongoose.model('Product', productSchema);
