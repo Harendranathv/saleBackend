@@ -1,6 +1,7 @@
 const dataFilePath = './data/products.json';
 
 const express = require('express');
+const cors = require('cors');
 const path = require('path');
 const PORT = process.env.PORT || 5000;
 const fs = require('fs');
@@ -9,6 +10,7 @@ let rawdata = fs.readFileSync(dataFilePath);
 let products = JSON.parse(rawdata);
 express()
     .use(bodyParser())
+    .use(cors())
     .use(express.static(path.join(__dirname, 'public')))
     .set('views', path.join(__dirname, 'views'))
     .set('view engine', 'ejs')
