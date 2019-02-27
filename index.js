@@ -20,6 +20,7 @@ let products = JSON.parse(rawdata);
 //     });
 // });
 express()
+    .use(cors())
     .use(bodyParser())
     .use(express.static(path.join(__dirname, 'public')))
     .set('views', path.join(__dirname, 'views'))
