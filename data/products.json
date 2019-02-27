@@ -51,5 +51,25 @@
       "Snack"
     ],
     "price": 15000
+  },
+  {
+    "id": 6,
+    "name": "Kẹo dẻo chupa chups miếng cầu vồng",
+    "photo": "https://salt.tikicdn.com/cache/550x550/ts/product/66/98/cb/1c5ea37ab74fe37b2e4c6e0299fcd960.jpg",
+    "unit": "Hộp 32 miếng",
+    "categories": [
+      "Kẹo Dẻo"
+    ],
+    "price": 52000
+  },
+  {
+    "id": 6,
+    "name": "Mực bento màu đỏ",
+    "photo": "https://cf.shopee.vn/file/2b1a1345af1d53145aeff13bb9ede0d3",
+    "unit": "Vĩ 13 miếng",
+    "categories": [
+      "Snack", "Thái Lan"
+    ],
+    "price": 38000
   }
 ]
