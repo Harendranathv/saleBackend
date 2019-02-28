@@ -27,7 +27,7 @@ app
     .use(express.static(path.join(__dirname, 'public')))
     .set('views', path.join(__dirname, 'views'))
     .set('view engine', 'ejs')
-    // .get('/', (req, res) => res.render('pages/index'))
+    .get('/enter-new-product', (req, res) => res.render('pages/index'))
     // .get('/products', (req, res) => res.json(products))
     // .post('/products', (req, res) => {
     //     console.log(req.body);
