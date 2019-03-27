@@ -11,11 +11,10 @@ app
   .use(cors())
   .use(bodyParser())
   .use(express.static(path.join(__dirname, 'public')))
-  .use(express.static(path.join(__dirname, 'HTML', 'dist')))
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => {
-    res.redirect('/index.html');
+    res.redirect('/HTML/index.html');
   })
   .get('/enter-new-product', (req, res) => res.render('pages/index'))
   .listen(PORT, () => {
