@@ -28,25 +28,25 @@ app
         console.log('Listening to Port: ', PORT);
     })
 
-
-const portSocket = process.env.PORT || 8080,
-    ip = process.env.IP || '127.0.0.1',
-
-    server = http.createServer().listen(portSocket, ip, function () {
-        console.log('Socket.IO server started at %s:%s!', ip, portSocket);
-    });
-
-const io = socketIO.listen(server);
-io.set('match origin protocol', true);
-io.set('origins', '*:*');
-var run = function (socket) {
-    // Socket process here!!!
-    socket.emit('greeting', 'Hello from Socket.IO server');
-}
-var send = function (data) {
-    // Socket process here!!!
-    socket.emit('greeting', 'You sent' + data);
-}
-
-io.sockets.on('connection', run);
-io.sockets.on('send', send);
+//
+// const portSocket = process.env.PORT || 8080,
+//     ip = process.env.IP || '127.0.0.1',
+//
+//     server = http.createServer().listen(portSocket, ip, function () {
+//         console.log('Socket.IO server started at %s:%s!', ip, portSocket);
+//     });
+//
+// const io = socketIO.listen(server);
+// io.set('match origin protocol', true);
+// io.set('origins', '*:*');
+// var run = function (socket) {
+//     // Socket process here!!!
+//     socket.emit('greeting', 'Hello from Socket.IO server');
+// }
+// var send = function (data) {
+//     // Socket process here!!!
+//     socket.emit('greeting', 'You sent' + data);
+// }
+//
+// io.sockets.on('connection', run);
+// io.sockets.on('send', send);
