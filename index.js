@@ -13,7 +13,6 @@ app
   .use(express.static(path.join(__dirname, 'public')))
   .use(express.static(path.join(__dirname, 'HTML', 'dist')))
   .set('views', path.join(__dirname, 'views'))
-  .set('views', path.join(__dirname, 'HTML', 'dist'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => {
     res.redirect('/index.html');
