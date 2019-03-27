@@ -23,7 +23,7 @@ export class ProductItemDetailComponent implements OnInit {
   }
 
   public getProductDetail(id) {
-    return this.http.get('https://product-items-sale.herokuapp.com/products/' + id);
+    return this.http.get('/products/' + id);
   }
 
   ngOnInit() {
