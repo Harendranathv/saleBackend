@@ -8,25 +8,26 @@ const bodyParser = require('body-parser');
 const socketIO = require('socket.io');
 const app = express();
 app
-    .use(cors())
-    .use(bodyParser())
-    .use(express.static(path.join(__dirname, 'public')))
-    .use(express.static(path.join(__dirname, 'HTML', 'dist')))
-    .set('views', path.join(__dirname, 'views'))
-    .set('view engine', 'ejs')
-    .get('/', (req, res) => {
-        res.redirect('/index.html');
-    })
-    .get('/enter-new-product', (req, res) => res.render('pages/index'))
-    .listen(PORT, () => {
-        // import Router
-        require('./lib/database');  // connect DB
+  .use(cors())
+  .use(bodyParser())
+  .use(express.static(path.join(__dirname, 'public')))
+  .use(express.static(path.join(__dirname, 'HTML', 'dist')))
+  .set('views', path.join(__dirname, 'views'))
+  .set('views', path.join(__dirname, 'HTML', 'dist'))
+  .set('view engine', 'ejs')
+  .get('/', (req, res) => {
+    res.redirect('/index.html');
+  })
+  .get('/enter-new-product', (req, res) => res.render('pages/index'))
+  .listen(PORT, () => {
+    // import Router
+    require('./lib/database');  // connect DB
 
-        fs.readdirSync(path.join(__dirname, './routes')).map(file => {
-            require('./routes/' + file)(app);
-        });
-        console.log('Listening to Port: ', PORT);
-    })
+    fs.readdirSync(path.join(__dirname, './routes')).map(file => {
+      require('./routes/' + file)(app);
+    });
+    console.log('Listening to Port: ', PORT);
+  })
 
 //
 // const portSocket = process.env.PORT || 8080,
