@@ -1,0 +1,12 @@
+<img class="product-photo" [src]="data?.photo" alt="">
+<div class="product-content">
+  <div class="product-name">
+    {{data?.name}}
+  </div>
+  <div class="product-unit">
+    {{data?.unit}}
+  </div>
+  <div class="product-price">
+    {{data?.price | currency: 'VND':'đ ': '1.0-2'}}
+  </div>
+</div>
