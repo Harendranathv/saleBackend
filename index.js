@@ -7,7 +7,6 @@ const PORT = process.env.PORT || 5000;
 const fs = require('fs');
 const bodyParser = require('body-parser');
 let rawdata = fs.readFileSync(dataFilePath);
-let products = JSON.parse(rawdata);
 // var MongoClient = require('mongodb').MongoClient;
 // var url = "mongodb+srv://admin:phat30091992@cluster0-eki10.gcp.mongodb.net/test?retryWrites=true";
 //
