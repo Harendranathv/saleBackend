@@ -16,14 +16,16 @@ export class ProductItemListComponent implements OnInit {
     this.http.get('/products')
       .subscribe((data: any) => {
         _.flatten(_.map(data, x => x.categories));
-        this.groups = _.toPairs(_.reduce(_.uniq(_.flatten(_.map(data, x => x.categories))), (recorder, cat) => {
-          recorder[cat] = _.filter(data, (item) => {
-            return item.categories.includes(cat);
+
+        this.groups = _.toPairs(_.reduce(_.compact(_.uniqBy(_.flatten(_.map(data, x => x.tag)), 'name')), (recorder, cat) => {
+          recorder[cat.name] = _.filter(data, (item) => {
+            return item.tag && item.tag.includes(cat);
           });
           return recorder;
-        }, {}));
+        }, {
+          'Uncategory': _.filter(data, x => !x.tag || !x.tag.length)
+        }));
       });
-
   }
 
   ngOnInit() {

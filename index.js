@@ -5,7 +5,6 @@ const PORT = process.env.PORT || 5000;
 const fs = require('fs');
 const http = require('http');
 const bodyParser = require('body-parser');
-let rawdata = fs.readFileSync(dataFilePath);
 // var MongoClient = require('mongodb').MongoClient;
 // var url = "mongodb+srv://admin:phat30091992@cluster0-eki10.gcp.mongodb.net/test?retryWrites=true";
 //
@@ -23,11 +22,11 @@ const app = express();
 app
   .use(cors())
   .use(bodyParser())
-  .use(express.static(path.join(__dirname, 'public')))
+  .use(express.static(path.join(__dirname, 'HTML')))
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => {
-    res.redirect('/HTML/index.html');
+    res.redirect('/index.html');
   })
   .get('/enter-new-product', (req, res) => res.render('pages/index'))
   .listen(PORT, () => {

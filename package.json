@@ -38,6 +38,7 @@
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "^0.13.7",
     "request": "^2.81.0",
     "tape": "^4.7.0"
   },
