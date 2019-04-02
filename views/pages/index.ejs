@@ -8,6 +8,12 @@
   <div class="container">
    <div class="roe">
      <div class="col-md-12">
+
+       <form action="/upload" enctype="multipart/form-data" method="post">
+         <input type="text" name="title"><br>
+         <input type="file" name="upload" multiple="multiple"><br>
+         <input type="submit" value="Upload">
+       </form>
        <form onsubmit="submitForm()" name="formCreateProduct" novalidate action="javascript:void(0);">
          <div class="form-group">
            <label for="Name">Name</label>
@@ -24,7 +30,6 @@
            <label for="Photo">Photo</label>
            <input type="text" id="Photo" class="form-control" placeholder="Photo" name="photo" required>
          </div>
-
          <div class="form-group">
            <label for="Categories">categories</label>
            <input type="text" id="Categories" class="form-control" placeholder="Categories" name="categories" required>
@@ -34,6 +39,7 @@
            <label for="price">price</label>
            <input type="number" id="price" class="form-control" placeholder="price" name="price" required>
          </div>
+
          <button class="btn btn-primary" type="submit">Save</button>
        </form>
      </div>
@@ -68,6 +74,7 @@
       xhttp.setRequestHeader('Content-type', 'application/json');
       xhttp.send(JSON.stringify(model));
   }
+
 </script>
 </body>
 </html>

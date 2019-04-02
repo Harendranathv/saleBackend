@@ -1,10 +1,9 @@
-const dataFilePath = './data/products.json';
-
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
 const PORT = process.env.PORT || 5000;
 const fs = require('fs');
+const http = require('http');
 const bodyParser = require('body-parser');
 let rawdata = fs.readFileSync(dataFilePath);
 // var MongoClient = require('mongodb').MongoClient;
@@ -19,32 +18,47 @@ let rawdata = fs.readFileSync(dataFilePath);
 //         db.close();
 //     });
 // });
+// const socketIO = require('socket.io');
 const app = express();
 app
-    .use(cors())
-    .use(bodyParser())
-    .use(express.static(path.join(__dirname, 'public')))
-    .set('views', path.join(__dirname, 'views'))
-    .set('view engine', 'ejs')
-    .get('/enter-new-product', (req, res) => res.render('pages/index'))
-    // .get('/products', (req, res) => res.json(products))
-    // .post('/products', (req, res) => {
-    //     console.log(req.body);
-    //     let newProduct = req.body;
-    //     newProduct.id = products.length + 1;
-    //     products.push(newProduct);
-    //     fs.writeFile(dataFilePath, products, () => {
-    //
-    //     });
-    //     res.json(products);
-    // })
-    .listen(PORT, () => {
-        // import Router
-        require('./lib/database');  // connect DB
+  .use(cors())
+  .use(bodyParser())
+  .use(express.static(path.join(__dirname, 'public')))
+  .set('views', path.join(__dirname, 'views'))
+  .set('view engine', 'ejs')
+  .get('/', (req, res) => {
+    res.redirect('/HTML/index.html');
+  })
+  .get('/enter-new-product', (req, res) => res.render('pages/index'))
+  .listen(PORT, () => {
+    // import Router
+    require('./lib/database');  // connect DB
 
-        fs.readdirSync(path.join(__dirname, './routes')).map(file => {
-            require('./routes/' + file)(app);
-        });
-        console.log('Listening to Port: ', PORT);
-    })
+    fs.readdirSync(path.join(__dirname, './routes')).map(file => {
+      require('./routes/' + file)(app);
+    });
+    console.log('Listening to Port: ', PORT);
+  })
 
+//
+// const portSocket = process.env.PORT || 8080,
+//     ip = process.env.IP || '127.0.0.1',
+//
+//     server = http.createServer().listen(portSocket, ip, function () {
+//         console.log('Socket.IO server started at %s:%s!', ip, portSocket);
+//     });
+//
+// const io = socketIO.listen(server);
+// io.set('match origin protocol', true);
+// io.set('origins', '*:*');
+// var run = function (socket) {
+//     // Socket process here!!!
+//     socket.emit('greeting', 'Hello from Socket.IO server');
+// }
+// var send = function (data) {
+//     // Socket process here!!!
+//     socket.emit('greeting', 'You sent' + data);
+// }
+//
+// io.sockets.on('connection', run);
+// io.sockets.on('send', send);

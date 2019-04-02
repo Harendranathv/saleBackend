@@ -1,0 +1,75 @@
+[
+  {
+    "id": 1,
+    "name": "Snack Tôm thái",
+    "photo": "http://www.vanthinhthaifood.com.vn/wp-content/uploads/2017/12/Snack-Ruaypuan-20g2-1-570x627.png",
+    "unit": "Lốc 12 gói",
+    "categories": [
+      "Snack",
+      "Thái Lan"
+    ],
+    "price": 35000
+  },
+  {
+    "id": 2,
+    "name": "Snack Cọng tôm Thái",
+    "photo": "https://bizweb.dktcdn.net/thumb/1024x1024/100/318/446/products/de300ca5f701165f4f10.jpg",
+    "unit": "Lốc 12 gói",
+    "categories": [
+      "Snack",
+      "Thái Lan"
+    ],
+    "price": 38000
+  },
+  {
+    "id": 3,
+    "name": "Kẹo chanh muối",
+    "photo": "http://cdn.nhanh.vn/cdn/store1/39005/ps/20190108/keo_chanh_muoi_thai_lan_thao_nguyen_shop_3_grande_600x449.jpg",
+    "unit": "Bịch 50 viên",
+    "categories": [
+      "Kẹo",
+      "Thái Lan"
+    ],
+    "price": 15000
+  },
+  {
+    "id": 4,
+    "name": "Bánh quy Gery phô mai Nhỏ",
+    "photo": "http://www.suadactrimimi.com/image/cache/data/gerychess-700x700.jpg",
+    "unit": "Hộp 20 cái",
+    "categories": [
+      "Bánh Quy"
+    ],
+    "price": 28000
+  },
+  {
+    "id": 5,
+    "name": "Bánh snack que oishi Socola",
+    "photo": "https://media-ak.static-adayroi.com/sys_master/h22/h4c/9498844233758.jpg",
+    "unit": "Gói 20 cái",
+    "categories": [
+      "Snack"
+    ],
+    "price": 15000
+  },
+  {
+    "id": 6,
+    "name": "Kẹo dẻo chupa chups miếng cầu vồng",
+    "photo": "https://salt.tikicdn.com/cache/550x550/ts/product/66/98/cb/1c5ea37ab74fe37b2e4c6e0299fcd960.jpg",
+    "unit": "Hộp 32 miếng",
+    "categories": [
+      "Kẹo Dẻo"
+    ],
+    "price": 52000
+  },
+  {
+    "id": 6,
+    "name": "Mực bento màu đỏ",
+    "photo": "https://cf.shopee.vn/file/2b1a1345af1d53145aeff13bb9ede0d3",
+    "unit": "Vĩ 13 miếng",
+    "categories": [
+      "Snack", "Thái Lan"
+    ],
+    "price": 38000
+  }
+]

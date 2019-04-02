@@ -1,0 +1,7 @@
+<accordion>
+  <accordion-group [heading]="g[0]" *ngFor="let g of groups">
+    <div class="product-list">
+      <app-product-item [routerLink]="['./detail',p._id]" *ngFor="let p of g[1]" [data]="p"></app-product-item>
+    </div>
+  </accordion-group>
+</accordion>

@@ -13,7 +13,7 @@ export class ProductItemListComponent implements OnInit {
   public groups;
 
   constructor(private  http: HttpClient) {
-    this.http.get('https://product-items-sale.herokuapp.com/products')
+    this.http.get('/products')
       .subscribe((data: any) => {
         _.flatten(_.map(data, x => x.categories));
         this.groups = _.toPairs(_.reduce(_.uniq(_.flatten(_.map(data, x => x.categories))), (recorder, cat) => {
